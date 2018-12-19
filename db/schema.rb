@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_12_19_122818) do
     t.string "cpf"
     t.string "address"
     t.integer "level"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

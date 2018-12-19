@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+  has_secure_password
   REGISTER_UNIQUE = 'Insira uma matrícula que não foi' + \
                     ' cadastrada anteriormente'.freeze
-
   validates :name, presence: { message: 'Preencha o campo' }
   validates :class_code, presence: { message: 'Preencha o campo' }
   validates :register, presence: { message: 'Preencha o campo' }

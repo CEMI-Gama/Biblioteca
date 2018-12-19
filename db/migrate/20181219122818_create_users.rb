@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :cpf
       t.string :address
       t.integer :level
-      t.string :password
+      t.string :password_digest
       t.string :string
 
       t.timestamps

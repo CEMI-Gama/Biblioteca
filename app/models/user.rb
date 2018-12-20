@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   def class_code_needs_a_number_and_a_caracter
     return if class_code.nil?
+
     if class_code.size != 2
       errors.add(:class_code, 'Ano e turma inválidos')
     end

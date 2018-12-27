@@ -21,4 +21,3 @@ class User < ApplicationRecord
       errors.add(:class_code, 'Ano e turma inválidos')
     end
   end
-end

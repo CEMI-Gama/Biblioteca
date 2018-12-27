@@ -1,18 +1,18 @@
-<h1>Cadastro Usuário</h1>
-<%= form_for @User, url:users_create_path do |f| %>
-	<%= f.label :name, 'Nome' %>
+<h1>Cadastro do Usuário</h1>
+<%= form_for @user, url:users_create_path do |f| %>
+	<%= f.label :name, 'Nome: ' %>
 	<%= f.text_field :name %><br>
-	<%= f.label :class_code, 'Turma' %>
+	<%= f.label :class_code, 'Turma: ' %>
 	<%= f.text_field :class_code %><br>
-	<%= f.label :register, 'Matrícula' %>
+	<%= f.label :register, 'Matrícula: ' %>
 	<%= f.text_field :register %><br>
-	<%= f.label :cpf, 'CPF' %>
+	<%= f.label :cpf, 'CPF: ' %>
 	<%= f.text_field :cpf %><br>
-	<%= f.label :address, 'Endereço' %>
-	<%= f.text_field :address %><br><br>	
-	<%= f.label :password, 'Senha' %>
+	<%= f.label :address, 'Endereço: ' %>
+	<%= f.text_field :address %><br><br>
+	<%= f.label :password, 'Senha: ' %>
 	<%= f.password_field :password %><br>
-	<%= f.label :password_confirmation, 'Confirme a Senha' %>
+	<%= f.label :password_confirmation, 'Confirme a Senha: ' %>
 	<%= f.password_field :password_confirmation %><br>
 
 	<%= f.submit 'Enviar' %>

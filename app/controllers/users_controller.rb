@@ -5,16 +5,27 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(permit)
-    @msg = if user.save
-             'Salvo com sucesso!'
-           else
-             user.errors.messages
-           end
+    if user.save
+      flash[:notice] = 'Criado com Sucesso!'
+      redirect_to root_path
+    else
+      @msg = user.errors.messages
+      flash.now.alert = 'Não foi possível criar.Conta já existente'
+      render :new
+    end
   end
 
-private
+  private
 
   def permit
-    params['user'].permit(:name, :cpf, :address, :level, :class_code, :password, :password_confirmation)
+    params['user'].permit(:name, :cpf, :address,
+                          :register, :level, :class_code,
+                          :password, :password_confirmation)
+  end
+
+  def user_params
+    params.require('user').permit(:name, :cpf, :address,
+                                  :register, :level, :class_code,
+                                  :password, :password_confirmation)
   end
 end

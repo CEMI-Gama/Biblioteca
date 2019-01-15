@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :register
       t.string :cpf
       t.string :address
-      t.integer :level
+      t.integer :level, :default => 1
       t.string :password_digest
       t.timestamps
     end

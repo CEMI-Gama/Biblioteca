@@ -90,4 +90,14 @@ RSpec.describe User, type: :model do
   	expect(user).to_not be_valid
   end
 
+  it 'create blank password' do
+    user = User.create(name: 'Tom', class_code: '3D', register: '498053039', cpf: '42341155847', address: 'sul', level: nil, password: nil, password_confirmation: nil)
+    expect(user).to_not be_valid
+  end
+
+  it 'create different password' do
+    user = User.create(name: 'Tom', class_code: '3D', register: '498053039', cpf: '42341155847', address: 'sul', level: nil, password: '1235', password_confirmation: '12345')
+    expect(user).to_not be_valid
+  end
+
 end

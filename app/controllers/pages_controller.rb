@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
-   # Restrict access so only logged in users can access the secret page:
+  # Restrict access so only logged in users can access the secret page:
   before_action :authorize, only: [:secret]
   def secret
+    # nothing to do
   end
 end

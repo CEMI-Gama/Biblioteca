@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       @msg = user.errors.messages
-      flash.now.alert = 'Não foi possível criar.Conta já existente'
+      flash.now.alert = @msg
+      @user = User.new
       render :new
     end
   end

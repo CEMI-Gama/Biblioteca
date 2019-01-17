@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authorize, except: [:create, :new]
   def new
     @user = User.new
   end
@@ -13,6 +14,19 @@ class UsersController < ApplicationController
       flash.now.alert = @msg
       @user = User.new
       render :new
+    end
+  end
+
+  def edit
+    @user = User.find_by(id:params['id'])
+  end
+
+  def update
+    user = User.find_by(id: params['id'])
+    if user.update_attributes(permit)
+      @msg = 'Salvo com sucesso'
+    else
+      @msg = user.errors.messages
     end
   end
 

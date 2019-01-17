@@ -1,0 +1,18 @@
+<h1>Alterar Usuário</h1>
+<%= form_for @user, url: users_update_path(@user) do |f|%>
+<%= f.label :name, 'Nome' %>
+<%= f.text_field :name %>
+<%= f.label :class_code, 'Turma' %>
+<%= f.text_field :class_code %>
+<%= f.label :register, 'Matrícula' %>
+<%= f.text_field :register %>
+<%= f.label :cpf, 'CPF' %>
+<%= f.text_field :cpf %>
+<%= f.label :address, 'Endereço' %>
+<%= f.text_field :address %>
+<%= f.label :password, 'Senha' %>
+<%= f.text_field :password %>
+<%= f.label :password_confirmation, 'Confirme a Senha' %>
+<%= f.text_field :password_confirmation %>
+<%= f.submit 'Enviar' %>
+<%end%>

@@ -16,7 +16,7 @@
       <%= "Logged in as #{current_user.cpf}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', sessions_destroy_path, method: :delete %>
     <% else %>
       <!-- not logged in -->
-      <%= link_to 'Home', root_path %> | <%= link_to 'Log In', sessions_create_path %> or <%= link_to 'Sign Up', users_new_path %>
+      <%= link_to 'Home', root_path %> | <%= link_to 'Log In', sessions_create_path %> or <%= link_to 'Sign Up', users_new_path %> | <%= link_to 'Edit', users_edit_path(@user.id) %>
     <% end %>
     <hr>
 

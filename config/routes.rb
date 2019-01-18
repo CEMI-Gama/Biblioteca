@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'pages#secret'
+  get 'users/new' => 'users#new' , as: 'users_new'  
+  post 'users/create' => 'users#create' , as: 'users_create'
+  get '/login'     => 'sessions#new' , as: 'sessions_new'
+  post '/login'    => 'sessions#create' , as: 'sessions_create'
+  delete '/logout' => 'sessions#destroy'  , as: 'sessions_destroy'
+  get '/edit/:id' => 'users#edit', as: 'users_edit'
+  patch 'users/update/:id' => 'users#update', as: 'users_update'
+  get 'pages/secret' => 'pages#secret', as: 'pages_secret'
+
 end

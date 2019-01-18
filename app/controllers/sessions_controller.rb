@@ -30,6 +30,6 @@ class SessionsController < ApplicationController
 
   def logged_in(user)
     session[:user_id] = user.id.to_s
-    redirect_to sessions_create_path, notice: 'Successfully logged in!'
+    redirect_to pages_secret_path, notice: 'Successfully logged in!'
   end
 end

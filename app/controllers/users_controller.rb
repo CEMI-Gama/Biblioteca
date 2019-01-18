@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize, except: [:create, :new]
+  before_action :authorize, except: %i[create new]
   def new
     @user = User.new
   end
@@ -18,15 +18,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id:params['id'])
+    @user = User.find_by(id: params['id'])
   end
 
   def update
-    user = User.find_by(id: params['id'])
-    if user.update_attributes(permit)
-      @msg = 'Salvo com sucesso'
+    @user = User.find_by(id: params['id'])
+    if @user.update_attributes(permit)
+      redirect_to pages_secret_path, notice: 'Alterado com sucesso!'
     else
-      @msg = user.errors.messages
+      flash.now.alert = @user.errors.messages
+      render :edit
     end
   end
 

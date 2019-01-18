@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   def authorize
     return unless current_user.nil?
 
-    redirect_to root_path, alert: 'You must be logged in to access this page.'
+    redirect_to sessions_new_path, alert: 'You must be logged in to access this
+    page.'
   end
 end

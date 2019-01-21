@@ -1,0 +1,25 @@
+<h1>Todos os usuários</h1>
+
+<table border='2px' style='width': 50%>
+	<tr>
+		<td>Nome</td>
+		<td>CPF</td>
+		<td>Matrícula</td>
+		<td>Turma</td>
+		<td>Endereço</td>
+		<td>Alterar</td>
+		<td>Remover</td>
+	</tr>
+<% @users.each do |user| %>
+<tr>
+		<td><%= link_to user.name, users_editadm_path(user.id) %></td>
+		<td><%= link_to user.cpf, users_show_path(user.id) %></td>
+		<td><%= link_to user.register, users_show_path(user.id) %></td>
+		<td><%= link_to user.class_code, users_show_path(user.id) %></td>
+		<td><%= link_to user.address, users_show_path(user.id) %></td>
+		<td>Lista de usuários</td>
+		<td><%= link_to 'Alterar', users_edit_path(user.id) %></td>
+		<td><%= link_to 'Remover', sessions_destroy_path(user.id), :method => 'delete' %></td>
+</tr>
+<% end %>
+</table>

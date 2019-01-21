@@ -4,6 +4,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
+  def editadm
+    @user = User.find_by(id: params['id'])
+  end
+
+  def show
+    @user = User.find_by(id: params['id'])
+  end
+
   def create
     user = User.new(permit)
     if user.save

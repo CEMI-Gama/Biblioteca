@@ -12,4 +12,10 @@ class ApplicationController < ActionController::Base
     redirect_to sessions_new_path, alert: 'You must be logged in to access this
     page.'
   end
+
+  def admin?
+    return unless current_user.level==1
+
+    redirect_to root_path, alert: 'Permissão insuficiente'
+  end 
 end

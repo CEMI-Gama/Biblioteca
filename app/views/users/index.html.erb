@@ -17,9 +17,9 @@
 		<td><%= link_to user.register, users_show_path(user.id) %></td>
 		<td><%= link_to user.class_code, users_show_path(user.id) %></td>
 		<td><%= link_to user.address, users_show_path(user.id) %></td>
-		<td>Lista de usuários</td>
-		<td><%= link_to 'Alterar', users_edit_path(user.id) %></td>
+		<td><%= link_to 'Alterar', users_editadm_path(user.id) %></td>
 		<td><%= link_to 'Remover', sessions_destroy_path(user.id), :method => 'delete' %></td>
 </tr>
+<%= link_to 'Criar usuário', users_new_path %>
 <% end %>
 </table>

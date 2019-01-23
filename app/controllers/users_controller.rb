@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize, except: %i[create new]
+  before_action :admin?, only: %i[editadm]
   def new
     @user = User.new
   end
@@ -30,6 +31,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if current_user.id == params[:id]
+      @user= User.find_by(id: params['id'])
+    else
+      redirect_to root_path, alert: 'BlaBlaBla'
+    end
     @user = User.find_by(id: params['id'])
   end
 

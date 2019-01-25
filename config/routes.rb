@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get 'users/show/:id' => 'users#show', as: 'users_show'
   get '/index' => 'users#index', as: 'users_index'
   get '/editadm/:id' => 'users#editadm', as: 'users_editadm'
-  get '/index2' => 'users#index2', as: 'users_index2'
+  get 'users/show/:id' => 'user#show', as: 'user_show'
 
 end

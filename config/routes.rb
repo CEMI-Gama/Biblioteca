@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get 'users/show/:id' => 'users#show', as: 'users_show'
   get '/index' => 'users#index', as: 'users_index'
   get '/editadm/:id' => 'users#editadm', as: 'users_editadm'
+# nem sei se tinha que fazer isso ou se to fazendo certo
+  get 'books/new' => 'books#new', as: 'books_new'
+  post 'books/create' => 'books#create', as: 'books_create'
 
 end

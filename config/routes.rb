@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 # nem sei se tinha que fazer isso ou se to fazendo certo
   get 'books/new' => 'books#new', as: 'books_new'
   post 'books/create' => 'books#create', as: 'books_create'
+  get 'books/show/:id' => 'books#show', as: 'boooks_show'
 
 end

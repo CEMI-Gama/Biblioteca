@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to sessions_new_path, notice: 'Logged out!'
+    redirect_to sessions_new_path, notice: 'Desconectado.'
   end
 
   private
@@ -30,6 +30,6 @@ class SessionsController < ApplicationController
 
   def logged_in(user)
     session[:user_id] = user.id.to_s
-    redirect_to pages_secret_path, notice: 'Successfully logged in!'
+    redirect_to pages_secret_path, notice: 'Logado com sucesso.'
   end
 end

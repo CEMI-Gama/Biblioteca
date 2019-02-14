@@ -1,11 +1,11 @@
-<h1>Login</h1>
+<h1>Entrar</h1>
 <%= form_for :login do |f| %>
   <div>
-    <%= f.label :cpf %>
+    <%= f.label :'CPF:' %>
     <%= f.text_field :cpf, autofocus: true %>
   </div>
   <div>
-    <%= f.label :password %>
+    <%= f.label :'Senha:' %>
     <%= f.password_field :password %>
   </div>
   <div>

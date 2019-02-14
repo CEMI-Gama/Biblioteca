@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LibraryApp</title>
+    <title>Biblioteca</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,14 +13,14 @@
 
     <% if current_user %>
       <!-- current_user will return true if a user is logged in -->
-      <%= "Logged in as #{current_user.cpf}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', sessions_destroy_path, method: :delete %> | <%= link_to 'Edit', users_edit_path(current_user.id) %>
+      <%= "Logged in as #{current_user.cpf}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Sair', sessions_destroy_path, method: :delete %> | <%= link_to 'Editar', users_edit_path(current_user.id) %>
       <% if current_user.level == 0 %>
       <h2> Você é um administrador </h2>
       <%= link_to 'Mostrar todos', users_index_path %>
       <% end %>
     <% else %>
       <!-- not logged in -->
-      <%= link_to 'Log In', sessions_create_path %> or <%= link_to 'Sign Up', users_new_path %> 
+      <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %> 
     <% end %>
     <hr>
 

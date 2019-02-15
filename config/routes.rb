@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#secret'
-  get 'users/new' => 'users#new' , as: 'users_new'  
+  get 'users/new' => 'users#new' , as: 'users_new'
   post 'users/create' => 'users#create' , as: 'users_create'
   get '/login'     => 'sessions#new' , as: 'sessions_new'
   post '/login'    => 'sessions#create' , as: 'sessions_create'

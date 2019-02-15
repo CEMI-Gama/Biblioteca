@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'pages#secret'
-  get 'users/new' => 'users#new' , as: 'users_new'  
+  get 'users/new' => 'users#new' , as: 'users_new'
   post 'users/create' => 'users#create' , as: 'users_create'
   get '/login'     => 'sessions#new' , as: 'sessions_new'
   post '/login'    => 'sessions#create' , as: 'sessions_create'
@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   get 'books/new' => 'books#new', as: 'books_new'
   post 'books/create' => 'books#create', as: 'books_create'
   get 'books/show/:id' => 'books#show', as: 'boooks_show'
-
+  get 'books/edit/:id' => 'books#edit', as: 'books_edit'
+  patch 'books/update/:id' => 'books#update', as: 'books_update'
+  patch 'books/destroy' => 'books#destroy', as: 'books_destroy'
 end

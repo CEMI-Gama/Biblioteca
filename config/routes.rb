@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'users/show/:id' => 'users#show', as: 'users_show'
   get '/index' => 'users#index', as: 'users_index'
   get '/editadm/:id' => 'users#editadm', as: 'users_editadm'
-  get '/show/:id' => 'users#show', as: 'user_show'
-
+  get '/show/' => 'users#show', as: 'user_show'
+ 
+  get 'books/new' => 'books#new' , as: 'books_new'  
+  post 'books/create' => 'books#create' , as: 'books_create'
+  get 'books/edit/:id' => 'books#edit', as: 'books_edit'
+  patch 'books/update/:id' => 'books#update', as: 'books_update'
+  delete 'books/delete' => 'books#destroy'  , as: 'books_destroy'
 end

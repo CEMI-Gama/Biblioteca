@@ -3,6 +3,18 @@ class BooksController < ApplicationController
 		@book = Book.new
 	end
 
+  def index
+    @books = Book.all
+  end
+
+  def show
+  @book = current_book
+  end
+
+  def seebook
+  @book = Book.find_by(id: params['id'])
+  end
+
   def create
     book = Book.new(permit)
     if book.save
@@ -13,10 +25,6 @@ class BooksController < ApplicationController
       flash.now.alert = 'Não foi possível criar.Conta já existente'
       render :new
     end
-  end
-
-  def show
-  @book = current_book
   end
 
 

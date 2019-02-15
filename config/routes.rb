@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 # nem sei se tinha que fazer isso ou se to fazendo certo
   get 'books/new' => 'books#new', as: 'books_new'
   post 'books/create' => 'books#create', as: 'books_create'
-  get 'books/show/:id' => 'books#show', as: 'boooks_show'
+  get 'books/show' => 'books#show', as: 'boooks_show'
+  get 'books/index' => 'books#index', as: 'books_index'
+  get 'books/seebook/:id' => 'books#seebook', as: 'books_seebook'
+# ↓ fizemos a rota p ti
+  get 'books/editadm/:id' => 'books#editadm', as: 'books_editadm'
 
 end

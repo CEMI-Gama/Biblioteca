@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :register, uniqueness: { message: REGISTER_UNIQUE }
   validates :cpf, presence: { message: 'Preencha o campo' }
   validates :cpf, cpf: { message: 'Insira um CPF válido' }
-  validates :cpf, uniqueness: { message: 'Não insira um CPF repetido...' }
+  validates :cpf, uniqueness: { message: 'Não insira um CPF repetido' }
   validates :address, presence: { message: 'Preencha o campo' }
   validates :level, presence: { message: 'Preencha o campo' }
 

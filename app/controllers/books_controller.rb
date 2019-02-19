@@ -18,11 +18,11 @@ class BooksController < ApplicationController
   def create
     book = Book.new(permit)
     if book.save
-      flash[:notice] = 'Criado com Sucesso!'
+      flash[:notice] = 'Cadastrado com Sucesso!'
       redirect_to root_path
     else
       @msg = book.errors.messages
-      flash.now.alert = 'Não foi possível criar.Conta já existente'
+      flash.now.alert = 'Não foi possível cadastrar.'
       render :new
     end
   end

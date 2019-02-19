@@ -16,7 +16,7 @@
       <%= "Logged in as #{current_user.cpf}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', sessions_destroy_path, method: :delete %> | <%= link_to 'Edit', users_edit_path(current_user.id) %> | <%= link_to 'Show', user_show_path(current_user.id) %>
       <% if current_user.level == 0 %>
       <h2> Você é um administrador </h2>
-      <%= link_to 'Mostrar todos', users_index_path %>
+      <%= link_to 'Mostrar todos', users_index_path %> | <%= link_to 'Cadastrar Livros', books_new_path %> | <%= link_to 'Editar Livros', books_edit_path %>
       <% end %>
     <% else %>
       <!-- not logged in -->

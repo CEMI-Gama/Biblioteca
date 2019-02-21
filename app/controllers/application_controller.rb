@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
     @current_user = User.find(session[:user_id]) if session[:user_id]
   end
 
-  def current_book
-    # Look up the current user based on user_id in the session cookie:
-    @current_book = Book.find(session[:book_id]) if session[:book_id]
-  end
-
   def authorize
     return unless current_user.nil?
 

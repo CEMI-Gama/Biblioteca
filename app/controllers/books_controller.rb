@@ -1,10 +1,16 @@
 class BooksController < ApplicationController
-	def new
+	before_action :admin?, only: %i[edit]
+  
+  def new
 		@book = Book.new
 	end
 
   def index
     @books = Book.all
+  end
+
+  def edit
+    @book = Book.find_by(id: params['id'])
   end
 
   def show

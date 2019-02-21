@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if current_user.id.to_s == params[:id]
       @user= User.find_by(id: params['id'])
     else
-      redirect_to root_path, alert: 'BlaBlaBla'
+      redirect_to root_path, alert: 'Permissão insuficiente'
     end
     @user = User.find_by(id: params['id'])
   end

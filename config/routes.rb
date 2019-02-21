@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'books/show' => 'books#show', as: 'boooks_show'
   get 'books/index' => 'books#index', as: 'books_index'
   get 'books/seebook/:id' => 'books#seebook', as: 'books_seebook'
-  get 'books/editadm/:id' => 'books#editadm', as: 'books_editadm'
+  get 'books/edit/:id' => 'books#edit', as: 'books_edit'
   patch 'books/update/:id' => 'books#update', as: 'books_update'
 
 end

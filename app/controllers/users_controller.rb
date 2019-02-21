@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params['id'])
+    @user = current_user
   end
 
   def create
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user.id == params[:id]
+    if current_user.id.to_s == params[:id]
       @user= User.find_by(id: params['id'])
     else
       redirect_to root_path, alert: 'BlaBlaBla'

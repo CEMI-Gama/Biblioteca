@@ -13,7 +13,8 @@
 
     <% if current_user %>
       <!-- current_user will return true if a user is logged in -->
-      <%= "Logado como #{current_user.name}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Sair', sessions_destroy_path, method: :delete %> | <%= link_to 'Editar', users_edit_path(current_user.id) %>
+      <%= "Logado como #{current_user.name}" %> | <%= link_to 'Início', root_path %> | <%= link_to 'Sair', sessions_destroy_path, method: :delete %> | <%= link_to 'Editar', users_edit_path(current_user.id) %> | <%= link_to 'Mostrar Perfil', user_show_path(current_user.id) %>
+
       <% if current_user.level == 0 %>
       <h2> Você é um administrador </h2>
       <%= link_to 'Mostrar todos', users_index_path %>

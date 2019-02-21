@@ -27,6 +27,9 @@ class BooksController < ApplicationController
     end
   end
 
+  def show
+    @book = current_book
+  end
 
 private
 

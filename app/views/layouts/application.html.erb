@@ -17,7 +17,7 @@
 
       <% if current_user.level == 0 %>
       <h2> Você é um administrador </h2>
-      <%= link_to 'Mostrar todos', users_index_path %>
+      <%= link_to 'Mostrar todos', users_index_path %> | <%= link_to 'Cadastrar Livros', books_new_path %> | <%= link_to 'Editar Livros', books_edit_path %>
       <% end %>
     <% else %>
       <!-- not logged in -->

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authorize, except: %i[create new]
-  before_action :admin?, only: %i[editadm]
+  before_action :authorize, except: %i[create new edit update]
+  before_action :admin?, only: %i[destroy]
   def new
     @user = User.new
   end
@@ -14,7 +14,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    if current_user.level.zero?
+      @user = User.find_by(id: params[:id])
+      if @user.nil?
+        flash.now.alert = 'Usuário não existente'
+        index
+        render :index
+      end
+    else
+      @user = current_user
+    end
   end
 
   def create
@@ -31,12 +40,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user.id.to_s == params[:id]
-      @user= User.find_by(id: params['id'])
+    if current_user.level == 0
+      @user = User.find_by(id: params[:id])
+      if @user.nil?
+        flash.now.alert = 'Usuário não existente'
+        index
+        render :index
+      end
     else
-      redirect_to root_path, alert: 'Permissão insuficiente'
+      @user = current_user
     end
-    @user = User.find_by(id: params['id'])
   end
 
   def update
@@ -46,6 +59,17 @@ class UsersController < ApplicationController
     else
       flash.now.alert = @user.errors.messages
       render :edit
+    end
+  end
+
+  def destroy
+    user = User.find_by(id: params[:id])
+    if user
+      user.destroy
+      redirect_to pages_secret_path, notice: 'Removido com sucesso!'
+    else
+      flash.now.alert = 'Usuário não existente'
+      render :index
     end
   end
 
@@ -61,5 +85,5 @@ class UsersController < ApplicationController
     params.require('user').permit(:name, :cpf, :address,
                                   :register, :level, :class_code,
                                   :password, :password_confirmation)
-  end
+   end
 end

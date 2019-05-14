@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-	before_action :admin?, only: %i[edit]
-  
+	before_action :admin?, only: %i[edit new create update]
+
   def new
 		@book = Book.new
 	end
@@ -14,10 +14,6 @@ class BooksController < ApplicationController
   end
 
   def show
-  @book = current_book
-  end
-
-  def seebook
   @book = Book.find_by(id: params['id'])
   end
 
@@ -33,20 +29,26 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-    @book = current_book
+	def update
+    @book = Book.find_by(id: params['id'])
+    if @book.update_attributes(permit)
+      redirect_to pages_secret_path, notice: 'Alterado com sucesso!'
+    else
+      flash.now.alert = @book.errors.messages
+      render :edit
+    end
   end
 
 private
 
   def permit
-    params['book'].permit(:title, :author, :publishing_company, 
+    params['book'].permit(:title, :author, :publishing_company,
     :year, :category, :bar_code, :source_of_donation, :amount)
   end
 
   def book_params
-    params.require('book').permit(:title, :author, :publishing_company, 
-                                  :year, :category, :bar_code, :source_of_donation, 
+    params.require('book').permit(:title, :author, :publishing_company,
+                                  :year, :category, :bar_code, :source_of_donation,
                                   :amount)
   end
 end

@@ -1,21 +1,21 @@
-<h1> Alteração de Livros </h1>
-<%= form_for @book, url:books_edit_path do |f| %>
-	<%= f.label :title, 'Nome do Livro:' %>
-	<%= f.text_field :title %><br>
-	<%= f.label :author, 'Autor:' %>
-	<%= f.text_field :author %><br>
-	<%= f.label :publishing_company, 'Editora:' %>
-	<%= f.text_field :publishing_company %><br>
-	<%= f.label :year, 'Ano:' %>
-	<%= f.text_field :year %><br>
-	<%= f.label :category, 'Categoria:' %>
-	<%= f.text_field :category %><br><br>	
-	<%= f.label :bar_code, 'Código de Barras:' %>
-	<%= f.text_field :bar_code %><br>
-	<%= f.label :source_of_donation, 'Origem da Doação:' %>
-	<%= f.text_field :source_of_donation %><br>
-	<%= f.label :amount, 'Quantidade:' %>
-	<%= f.text_field :amount %><br>
+<h1>Alterar Dados do Livro</h1>
+<%= form_for @book, url: books_update_path(@book.id) do |f|%>
+<%= f.label :title, 'Título:' %>
+<%= f.text_field :title %>
+<%= f.label :author, 'Autor:' %>
+<%= f.text_field :author %>
+<%= f.label :publishing_company, 'Editora:' %>
+<%= f.text_field :publishing_company %>
+<%= f.label :year, 'Ano:' %>
+<%= f.text_field :year %>
+<%= f.label :category, 'Categoria:' %>
+<%= f.text_field :category %>
+<%= f.label :bar_code, 'Código de Barras:' %>
+<%= f.text_field :bar_code %>
+<%= f.label :source_of_donation, 'Origem da Doação:' %>
+<%= f.text_field :source_of_donation %>
+<%= f.label :amount, 'Quantidade:' %>
+<%= f.text_field :amount %>
 
-	<%= f.submit 'Salvar' %>
-<% end %>
+<%= f.submit 'Salvar' %>
+<%end%>

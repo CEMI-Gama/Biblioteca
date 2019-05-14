@@ -17,5 +17,5 @@ class ApplicationController < ActionController::Base
     return unless current_user.level==1
 
     redirect_to root_path, alert: 'Permissão insuficiente'
-  end 
+  end
 end

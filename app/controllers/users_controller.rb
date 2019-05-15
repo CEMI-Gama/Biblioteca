@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user.level == 0
+    if current_user.level.zero?
       @user = User.find_by(id: params[:id])
       if @user.nil?
         flash.now.alert = 'Usuário não existente'
@@ -85,5 +85,5 @@ class UsersController < ApplicationController
     params.require('user').permit(:name, :cpf, :address,
                                   :register, :level, :class_code,
                                   :password, :password_confirmation)
-   end
+  end
 end

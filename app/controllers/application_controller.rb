@@ -9,12 +9,12 @@ class ApplicationController < ActionController::Base
   def authorize
     return unless current_user.nil?
 
-    redirect_to sessions_new_path, alert: 'Você precisa estar logado para acessar
-    esta página.'
+    redirect_to sessions_new_path, alert: 'Você precisa estar logado para entrar
+    nesta página.'
   end
 
   def admin?
-    return unless current_user.level==1
+    return unless current_user.level == 1
 
     redirect_to root_path, alert: 'Permissão insuficiente'
   end

@@ -18,7 +18,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find_by(id: params['id'])
-    @barcode = Barby::EAN13.new('000000000000')
+    @barcode = Barby::EAN13.new(@book.bar_code)
     @barcode_for_html = Barby::HtmlOutputter.new(@barcode)
   end
 

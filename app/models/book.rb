@@ -16,7 +16,11 @@ class Book < ApplicationRecord
   def generate_bar_code
     require 'digest'
     loop do
-      bar_code = [*('0'..'9')].sample(13).join
+      code = []
+      12.times do
+        code.push([*('1'..'9')].sample)
+      end
+      bar_code = code.join
       break bar_code if Book.find_by(bar_code: bar_code).nil?
     end
   end

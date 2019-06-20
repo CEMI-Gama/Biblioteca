@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
   before_action :admin?, only: %i[edit new create update]
+  require 'barby'
+  require 'barby/barcode/ean_13'
+  require 'barby/outputter/html_outputter'
 
   def new
     @book = Book.new
@@ -15,6 +18,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find_by(id: params['id'])
+    @barcode = Barby::EAN13.new('000000000000')
+    @barcode_for_html = Barby::HtmlOutputter.new(@barcode)
   end
 
   def create
@@ -48,7 +53,7 @@ class BooksController < ApplicationController
 
   def book_params
     params.require('book').permit(:title, :author, :publishing_company,
-                                  :year, :category, :bar_code,
+                                  :year, :category,
                                   :source_of_donation, :amount)
   end
 end

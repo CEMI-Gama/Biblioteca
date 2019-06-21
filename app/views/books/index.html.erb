@@ -1,7 +1,63 @@
-<h1>Todos os livros</h1>
+<div class="card text-center">
+  <div class="card-header">
+		<h1>Todos os livros</h1>
+  </div>
+
 <form class="" action="search.html.erb" method="post">
 	Buscar<input type="text" name="searching" >
 </form>
+
+<div class="row">
+<div class="col-12 col-lg-4 col-sm-6">
+	<div class="card">
+							<div class="card-header">
+									Nome do Livro
+							</div>
+							<ul class="list-group list-group-flush">
+
+								<li class="list-group-item">Autor</li>
+									<li class="list-group-item">Ano</li>
+									<li class="list-group-item">Alterar</li>
+										<li class="list-group-item">Remover</li>
+
+		</ul>
+				 </div>
+
+</div>
+
+<div class="col-12 col-lg-8 col-sm-6">
+	<div class="card">
+							<div class="card-header">
+								<%= @book.title %>
+							</div>
+							<ul class="list-group list-group-flush">
+
+								<li class="list-group-item"><%= @book.author %></li>
+									<li class="list-group-item"><%= @book.publishing_company %></li>
+									<li class="list-group-item"><%= @book.year %></li>
+									<li class="list-group-item"><%= @book.category %></li>
+										<li class="list-group-item"><%= @book.source_of_donation %></li>
+										<li class="list-group-item"><%= @book.amount %></li>
+										<li class="list-group-item"><%= raw @barcode_for_html.to_html %>
+												<br>
+												Código: <%= @book.bar_code %> </li>
+
+		</ul>
+				 </div>
+
+</div>
+</div>
+
+
+</div>
+
+<br>
+<br>
+
+
+
+
+
 <table border='2px' style='width': 50%>
 	<tr>
 		<td>Título</td>
@@ -22,5 +78,5 @@
 
 
 </tr>
-<% end %>
 </table>
+<% end %>

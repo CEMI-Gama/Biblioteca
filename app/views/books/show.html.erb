@@ -1,39 +1,54 @@
+
 <div class="card text-center">
   <div class="card-header">
   <h1> Mostrar Livros </h1>
   </div>
-	<div class="card-body">
-  	<div class="border mb-3">
+	<div class="row">
+	<div class="col-12 col-lg-4 col-sm-6">
+		<div class="card">
+								<div class="card-header">
+										Nome do Livro
+								</div>
+								<ul class="list-group list-group-flush">
 
-  	</div>
-  </div>
+									<li class="list-group-item">Autor</li>
+										<li class="list-group-item">Editora</li>
+										<li class="list-group-item">Ano</li>
+										<li class="list-group-item">Categoria</li>
+											<li class="list-group-item">Origem</li>
+											<li class="list-group-item">Quantidade</li>
+											<li class="list-group-item">Código de Barras</li>
+
+			</ul>
+					 </div>
+
+	</div>
+
+	<div class="col-12 col-lg-8 col-sm-6">
+		<div class="card">
+								<div class="card-header">
+									<%= @book.title %>
+								</div>
+								<ul class="list-group list-group-flush">
+
+									<li class="list-group-item"><%= @book.author %></li>
+										<li class="list-group-item"><%= @book.publishing_company %></li>
+										<li class="list-group-item"><%= @book.year %></li>
+										<li class="list-group-item"><%= @book.category %></li>
+											<li class="list-group-item"><%= @book.source_of_donation %></li>
+											<li class="list-group-item"><%= @book.amount %></li>
+											<li class="list-group-item"><%= raw @barcode_for_html.to_html %>
+													<br>
+													Código: <%= @book.bar_code %> </li>
+
+			</ul>
+					 </div>
+
+	</div>
+</div>
 
 
-<table border='2px' style='width': 50%>
-	<tr>
-		<td>Nome do Livro</td>
-		<td>Autor</td>
-		<td>Editora</td>
-		<td>Ano</td>
-		<td>Categoria</td>
-		<td>Origem da Doação</td>
-		<td>Quantidade</td>
-		<td>Código de Barras</td>
-	</tr>
+</div>
 
-<tr>
-		<td><%= @book.title %></td>
-		<td><%= @book.author %></td>
-		<td><%= @book.publishing_company %></td>
-		<td><%= @book.year %></td>
-		<td><%= @book.category %></td>
-		<td><%= @book.source_of_donation %></td>
-		<td><%= @book.amount %></td>
-		<td><%= raw @barcode_for_html.to_html %>
-				<br>
-				Código: <%= @book.bar_code %> </td>
-
-</tr>
-</table>
 <br>
 <br>

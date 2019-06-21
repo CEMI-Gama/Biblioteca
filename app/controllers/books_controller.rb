@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :admin?, only: %i[edit new create update]
-  layout 'admin'
+  layout 'admin', only: %i[edit new create update]
   require 'barby'
   require 'barby/barcode/ean_13'
   require 'barby/outputter/html_outputter'
@@ -11,6 +11,11 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+  end
+
+  def search
+    term = params[:search_term]
+    @books = Book.where('title like ? OR bar_code = ?', "%#{term}%", term)
   end
 
   def edit

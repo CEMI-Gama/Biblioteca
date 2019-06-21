@@ -1,25 +1,5 @@
 <div class="container">
 
-	<div class="row">
-		<div class="col">
-			<div class="top-menu">
-				<nav>
-					<div class="toggle"><i class="fas fa-bars menu"></i></div>
-						<ul>
-							<li><a href="site.html">Inicio</a></li>
-							<li><a href="Acervo.html">Acervo</a></li>
-						</ul>
-					</nav>
-					<nav>
-						<div class="toggle"><i class="fas fa-bars menu"></i></div>
-						<ul class="login">
-							<li><a href="login.html">Login</a></li>
-						</ul>
-					</nav>
-			</div>
-		</div>
-	</div>
-
 	<div class="row my-4">
 	  <div class="col">
 	   <div class="bd-example">
@@ -62,9 +42,11 @@
 	</div>
 	<div class="row">
 		<div class="col-7 mx-auto text-center">
-			<input type="text" class="form-control" name="search" placeholder="Buscar">
+			<%= form_tag books_search_path, method: 'get' do %>
+			<%= text_field_tag 'search_term', nil, class: 'form-control', placeholder: 'Buscar' %>
 			<div class="col-2 my-3"></div>
-			<button type="button" class="btn btn-primary">Buscar</button>
+			<%= submit_tag 'Buscar', class: 'btn btn-primary text-white'%>
+			<% end %>
 		</div>
 	</div>
  </div>

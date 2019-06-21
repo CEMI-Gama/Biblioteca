@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  
-  root to: 'pages#secret'
+  root to: 'home#index'
   get 'users/new' => 'users#new' , as: 'users_new'
   post 'users/create' => 'users#create' , as: 'users_create'
   get 'users/show/:id' => 'users#show', as: 'users_show'
@@ -23,5 +21,6 @@ Rails.application.routes.draw do
   get 'books/index' => 'books#index', as: 'books_index'
   get 'books/edit/:id' => 'books#edit', as: 'books_edit'
   patch 'books/update/:id' => 'books#update', as: 'books_update'
+  get 'books/search' => 'books#search', as: 'books_search'
 
 end

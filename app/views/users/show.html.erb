@@ -1,20 +1,47 @@
-<h1>Mostrar perfil</h1>
 
-<table border='2px' style='width': 50%>
-	<tr>
-		<td>Nome</td>
-		<td>CPF</td>
-		<td>Matrícula</td>
-		<td>Turma</td>
-		<td>Endereço</td>
-	</tr>
+<div class="card text-center">
+  <div class="card-header">
+  <h1>Mostrar perfil</h1>
+  </div>
 
-<tr>
-		<td><%=@user.name%></td>
-		<td><%=@user.cpf%></td>
-		<td><%=@user.register%></td>
-		<td><%=@user.class_code%></td>
-		<td><%=@user.address%></td>
 
-</tr>
-</table>
+	<div class="row">
+	<div class="col-12 col-lg-4 col-sm-6">
+		<div class="card">
+								<div class="card-header">
+										Nome
+								</div>
+								<ul class="list-group list-group-flush">
+
+									<li class="list-group-item">CPF</li>
+										<li class="list-group-item">Matrícula</li>
+										<li class="list-group-item">Ano</li>
+										<li class="list-group-item">Turma</li>
+											<li class="list-group-item">Origem</li>
+											<li class="list-group-item">Quantidade</li>
+											<li class="list-group-item">Endereço</li>
+
+			</ul>
+					 </div>
+
+					 <div class="col-12 col-lg-8 col-sm-6">
+				 		<div class="card">
+				 								<div class="card-header">
+				 									<%=@user.name%>
+				 								</div>
+				 								<ul class="list-group list-group-flush">
+
+				 									<li class="list-group-item"><%=@user.cpf%></li>
+				 										<li class="list-group-item"><%=@user.register%></li>
+				 										<li class="list-group-item"><%=@user.class_code%></li>
+				 										<li class="list-group-item"><%=@user.address%></li>
+				 			</ul>
+				 					 </div>
+
+				 	</div>
+				 </div>
+
+
+				 </div>
+				 <br>
+				 <br>

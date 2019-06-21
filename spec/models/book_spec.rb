@@ -22,12 +22,12 @@ RSpec.describe Book, type: :model do
   end
 
   it 'create valid publishing_company' do
-    book = Book.create(title: '1984', author: nil, publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
     expect(book).to be_valid
   end
 
   it 'create dont valid publishing_company' do
-    book = Book.create(title: '1984', author: nil, publishing_company: nil, year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: nil, year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
     expect(book).to_not be_valid
   end
 
@@ -37,27 +37,12 @@ RSpec.describe Book, type: :model do
   end
 
   it 'create dont valid year' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '20188', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
-    expect(book).to_not be_valid
-  end
-
-  it 'create dont valid year too' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '218', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
-    expect(book).to_not be_valid
-  end
-
-  it 'create dont valid year too, too' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '18', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
-    expect(book).to_not be_valid
-  end
-
-  it 'create dont valid year too, yes, too' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: nil, category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
     expect(book).to_not be_valid
   end
 
   it 'create valid category' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
     expect(book).to be_valid
   end
 
@@ -72,12 +57,7 @@ RSpec.describe Book, type: :model do
   end
 
   it 'create dont valid bar code' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: nil, source_of_donation: 'Christyan', amount: '1')
-    expect(book).to_not be_valid
-  end
-
-  it 'create dont valid bar code too' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: '1111111111111', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: nil, source_of_donation: 'Christyan', amount: '1')
     expect(book).to_not be_valid
   end
 
@@ -109,5 +89,5 @@ RSpec.describe Book, type: :model do
     book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: nil)
     expect(book).to_not be_valid
   end
-  
+
 end

@@ -1,12 +1,16 @@
 class BooksController < ApplicationController
   before_action :admin?, only: %i[edit new create update]
-
+  layout 'admin'
   def new
     @book = Book.new
   end
 
   def index
     @books = Book.all
+  end
+
+  def search
+    @books = Book.all where find_by(id: params[:title])
   end
 
   def edit
@@ -25,6 +29,7 @@ class BooksController < ApplicationController
     else
       @msg = book.errors.messages
       flash.now.alert = 'Não foi possível cadastrar.'
+      new
       render :new
     end
   end

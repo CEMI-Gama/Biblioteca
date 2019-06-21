@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :authorize, except: %i[create new edit update]
+
   before_action :admin?, only: %i[destroy]
+  layout 'admin'
   def new
     @user = User.new
   end

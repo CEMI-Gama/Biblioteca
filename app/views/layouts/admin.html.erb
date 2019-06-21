@@ -20,17 +20,46 @@
                 <div class="top-menu">
                   <nav style="padding:10px;">
                       <ul>
-                        <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
+                        <% if current_user %>
+                            <%= "Logado como #{current_user.name}" %> | <%= link_to 'Início', root_path %> || <%= link_to 'Editar', users_edit_path(current_user.id) %> | <%= link_to 'Mostrar Perfil', users_show_path(current_user.id) %>
                   </nav>
                   <nav style="padding:10px;">
                       <ul class="login">
-                        <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
-                     </ul>
-                  </nav>
-                </div>
-            </div>
-        </div>
 
+      <!-- current_user will return true if a user is logged in -->
+                   <%= link_to 'Sair', sessions_destroy_path, method: :delete %>
+                      </nav>
+                    </div>
+                  </div>
+                  </div>
+                  <br>
+
+      <% if current_user.level == 0 %>
+      <h2> Você é um administrador </h2>
+      <%= link_to 'Mostrar todos', users_index_path %> | <%= link_to 'Cadastrar Livros', books_new_path %> | <%= link_to 'Mostrar Acervo', books_index_path %>
+
+      <% end %>
+      <%else%>
+
+  <div class="row">
+          <div class="col">
+              <div class="top-menu">
+                <nav style="padding:10px;">
+                    <ul>
+                      <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
+                </nav>
+                <nav style="padding:10px;">
+                    <ul class="login">
+                      <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
+                   </ul>
+                </nav>
+              </div>
+          </div>
+      </div>
+
+
+
+    <% end %>
     <hr>
 
     <% if notice %>

@@ -1,14 +1,22 @@
-<h1>Entrar</h1>
+
+<div class="imagem">
+          <div class="row"><div class="col-sm-12 text-center"> <a href="site.html"><img src="http://localhost:3000/assets/logo.png" style="width:200px; heigth:200px; alt=""> </a></div></div></div>
+        <div class="content"><div class="row"><div class="col text-center">
+        <div class="titulo"><h1 style="font-family: fantasy;"> Biblioteca </h1></div>
 <%= form_for :login do |f| %>
-  <div>
-    <%= f.label :cpf, 'CPF:' %>
-    <%= f.text_field :cpf, autofocus: true %>
-  </div>
-  <div>
-    <%= f.label :'Senha:' %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
+    <div class="text-center " >
+      <%= f.label :cpf, 'CPF:' %>
+      <%= f.text_field :cpf, autofocus: true %>
+    </div>
+
+
+    <div>
+      <%= f.label :'Senha:' %>
+      <%= f.password_field :password %>
+    </div>
+  <div class="text-center">
     <%= f.submit "Login" %>
   </div>
+
+        	    <br>
 <% end %>

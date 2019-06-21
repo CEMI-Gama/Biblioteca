@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
   before_action :admin?, only: %i[edit new create update]
-  layout 'admin', only: %i[edit new create update]
   require 'barby'
   require 'barby/barcode/ean_13'
   require 'barby/outputter/html_outputter'

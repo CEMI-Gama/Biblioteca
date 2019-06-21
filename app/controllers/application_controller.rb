@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
+  layout :define_layout
   # Define the current_user method:
   def current_user
 
@@ -16,7 +17,16 @@ class ApplicationController < ActionController::Base
 
   def admin?
     return unless current_user.level == 1
-    layout 'admin'
     redirect_to root_path, alert: 'Permissão insuficiente'
+  end
+
+  private
+
+  def define_layout
+    if current_user
+      'admin'
+    else
+      'application'
+    end
   end
 end

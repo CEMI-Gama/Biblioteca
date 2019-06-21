@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
-  REGISTER_UNIQUE = 'Insira um código de barras que não foi' + \
-                    ' cadastrado anteriormente'.freeze
+  before_create do |doc|
+    doc.bar_code = doc.generate_bar_code
+  end
+
   validates :title, presence: { message: 'Preencha o campo' }
   validates :author, presence: { message: 'Preencha o campo' }
   validates :publishing_company, presence: { message: 'Preencha o campo' }
@@ -11,13 +13,17 @@ class Book < ApplicationRecord
   validates :source_of_donation, presence: { message: 'Preencha o campo' }
   validates :amount, presence: { message: 'Preencha o campo' }
 
-  validate :bar_code_needs_thirteen_numbers
 
-  def bar_code_needs_thirteen_numbers
-    return if bar_code.nil?
+  def generate_bar_code
+    require 'digest'
+    loop do
+      code = []
+      12.times do
+        code.push([*('1'..'9')].sample)
+      end
+      bar_code = code.join
+      break bar_code if Book.find_by(bar_code: bar_code).nil?
+    end
 
-    return if bar_code.size == 13
-
-    errors.add(:bar_code, 'Código de Barras inválido')
   end
 end

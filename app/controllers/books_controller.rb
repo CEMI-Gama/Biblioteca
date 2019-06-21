@@ -13,10 +13,6 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  def search
-    @books = Book.all where find_by(id: params[:title])
-  end
-
   def edit
     @book = Book.find_by(id: params['id'])
   end
@@ -35,7 +31,6 @@ class BooksController < ApplicationController
     else
       @msg = book.errors.messages
       flash.now.alert = 'Não foi possível cadastrar.'
-      new
       render :new
     end
   end

@@ -9,10 +9,9 @@ class Book < ApplicationRecord
   validates :year, presence: { message: 'Preencha o campo' }
   validates :category, presence: { message: 'Preencha o campo' }
   validates :bar_code, presence: { message: 'Preencha o campo' }
-  validates :bar_code, uniqueness: { message: REGISTER_UNIQUE }
+  validates :bar_code, uniqueness: { message: 'Insira outro código de barra' }
   validates :source_of_donation, presence: { message: 'Preencha o campo' }
   validates :amount, presence: { message: 'Preencha o campo' }
-
 
   def generate_bar_code
     require 'digest'
@@ -24,6 +23,5 @@ class Book < ApplicationRecord
       bar_code = code.join
       break bar_code if Book.find_by(bar_code: bar_code).nil?
     end
-
   end
 end

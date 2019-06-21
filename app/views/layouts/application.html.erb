@@ -18,13 +18,13 @@
     <div class="row">
             <div class="col">
                 <div class="top-menu">
-                  <nav style="padding:10px;">
+                  <nav>
                       <ul>
-                        <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
+                      <li>  <%= link_to 'Login', sessions_create_path %></li> |<li><%= link_to 'Cadastre-se', users_new_path %></li>
                   </nav>
-                  <nav style="padding:10px;">
+                  <nav>
                       <ul class="login">
-                        <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
+                         <li><%= link_to 'Cadastre-se', users_new_path %></li>
                      </ul>
                   </nav>
                 </div>
@@ -45,6 +45,7 @@
     <%= yield %>
 
     <footer id="myFooter">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">

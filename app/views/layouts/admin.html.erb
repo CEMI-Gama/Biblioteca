@@ -18,16 +18,16 @@
     <div class="row">
             <div class="col">
                 <div class="top-menu">
-                  <nav style="padding:10px;">
+                  <nav>
                       <ul>
                         <% if current_user %>
-                            <%= "Logado como #{current_user.name}" %> | <%= link_to 'Início', root_path %> || <%= link_to 'Editar', users_edit_path(current_user.id) %> | <%= link_to 'Mostrar Perfil', users_show_path(current_user.id) %>
+                            <li><%= "Logado como #{current_user.name}" %></li> <li> <%= link_to 'Início', root_path %> </li> <li> <%= link_to 'Editar', users_edit_path(current_user.id) %></li>  <li><%= link_to 'Mostrar Perfil', users_show_path(current_user.id) %></li>
                   </nav>
-                  <nav style="padding:10px;">
+                  <nav>
                       <ul class="login">
 
       <!-- current_user will return true if a user is logged in -->
-                   <%= link_to 'Sair', sessions_destroy_path, method: :delete %>
+                   <li><%= link_to 'Sair', sessions_destroy_path, method: :delete %></li>
                       </nav>
                     </div>
                   </div>
@@ -35,31 +35,46 @@
                   <br>
 
       <% if current_user.level == 0 %>
-      <h2> Você é um administrador </h2>
-      <%= link_to 'Mostrar todos', users_index_path %> | <%= link_to 'Cadastrar Livros', books_new_path %> | <%= link_to 'Mostrar Acervo', books_index_path %>
-
+      <div class="row">
+        <div class="col-6 mx-auto">
+          <div class="card text-center ">
+              <div class="card-header">
+                <h2> Você é um administrador</h2>
+              </div>
+              <div class="card-body">
+                <ul>
+                  <i class="btn border-primary"><%= link_to 'Mostrar todos', users_index_path %></i> <li class="btn  border-primary"><%= link_to 'Cadastrar Livros', books_new_path %></li> <li class="btn  border-primary"><%= link_to 'Mostrar Acervo', books_index_path %></li>
+                </ul>
+                </div>
+                <div class="card-footer">
+                  <h6>Haja como tal</h6>
+                </div>
+        </div>
+        </div>
+        </div>
       <% end %>
       <%else%>
-
-  <div class="row">
-          <div class="col">
-              <div class="top-menu">
-                <nav style="padding:10px;">
-                    <ul>
-                      <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
-                </nav>
-                <nav style="padding:10px;">
-                    <ul class="login">
-                      <%= link_to 'Entre', sessions_create_path %> ou <%= link_to 'Cadastre-se', users_new_path %>
-                   </ul>
-                </nav>
+      <div class="row">
+              <div class="col">
+                  <div class="top-menu">
+                    <nav>
+                        <ul>
+                        <li>  <%= link_to 'Login', sessions_create_path %></li> |<li><%= link_to 'Cadastre-se', users_new_path %></li>
+                    </nav>
+                    <nav>
+                        <ul class="login">
+                           <li><%= link_to 'Cadastre-se', users_new_path %></li>
+                       </ul>
+                    </nav>
+                  </div>
               </div>
           </div>
-      </div>
+
+      <hr>
+      <% end %>
 
 
 
-    <% end %>
     <hr>
 
     <% if notice %>

@@ -8,4 +8,15 @@
 
 User.create(name: 'Gabriel', class_code: '3D', register: '000337751', cpf: '70843816198', address: 'sul', level: 0, password:'1234', password_confirmation: '1234')
 User.create(name: 'Chris', class_code: '3D', register: '498053039', cpf: '70852532156', address: 'sul', level: 1, password:'1234', password_confirmation: '1234')
-Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+# Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+
+
+require 'csv'
+csv_text = File.read('db/livros.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  book = Book.new(row.to_hash)
+  unless book.save
+    print book.errors.inspect
+  end
+end

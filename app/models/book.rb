@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  before_create do |doc|
+  before_validation do |doc|
     doc.bar_code = doc.generate_bar_code
   end
 

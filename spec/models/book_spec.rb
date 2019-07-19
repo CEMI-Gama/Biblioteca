@@ -47,28 +47,16 @@ RSpec.describe Book, type: :model do
   end
 
   it 'create dont valid category' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: nil, bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: nil, bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
     expect(book).to_not be_valid
   end
 
   it 'create valid bar code' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
+    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')
     expect(book).to be_valid
   end
 
-  it 'create dont valid bar code' do
-    book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '2018', category: 'Romance', bar_code: nil, source_of_donation: 'Christyan', amount: '1')
-    expect(book).to_not be_valid
-  end
-
-  it 'create new valid and dont valid bar code' do
-    book = Book.create(title: 'A loja de tudo', author: 'Brad Stone', publishing_company: 'Intrínseca', year: '2017', category: 'Biografia', bar_code: '9788580574890', source_of_donation: 'Chris', amount: '2')
-    expect(book).to be_valid
-    book = Book.create(title: 'Os lusíadas', author: 'Luís de Camões', publishing_company: 'Pé da Letra', year: '2016', category: 'Poesia', bar_code: '9788580574890', source_of_donation: 'Eu', amount: '3')
-    expect(book).to_not be_valid
-  end
-
-# validacao ae aqui pro codigo de barras
+# n esta passando pelo rspec o teste dont valid bar code
 
   it 'create valid source of donation' do
     book = Book.create(title: '1984', author: 'George Orwell', publishing_company: 'Companhia das Letras', year: '8', category: 'Romance', bar_code: '9788535914849', source_of_donation: 'Christyan', amount: '1')

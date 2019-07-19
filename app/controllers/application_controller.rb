@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   layout :define_layout
   # Define the current_user method:
   def current_user
-
     # Look up the current user based on user_id in the session cookie:
     @current_user = User.find(session[:user_id]) if session[:user_id]
   end
@@ -17,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   def admin?
     return unless current_user.level == 1
+
     redirect_to root_path, alert: 'Permissão insuficiente'
   end
 

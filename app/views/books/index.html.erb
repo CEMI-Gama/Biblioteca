@@ -1,53 +1,60 @@
 <div class="card text-center">
-  <div class="card-header">
-		<h1>Todos os livros</h1>
-  </div>
+
+<div class="card-header">
+  <h1> Todos os livros </h1>
+</div>
 
 <form class="" action="search.html.erb" method="post">
-	Buscar<input type="text" name="searching" >
+  Buscar <input type="text" name="searching" >
 </form>
 
-
-
 <div class="row">
-<div class="col-12 col-lg-4 col-sm-6">
-	<div class="card">
-							<div class="card-header">
-									Nome do Livro
-							</div>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item">Autor</li>
-									<li class="list-group-item">Ano</li>
-									<li class="list-group-item">Alterar</li>
-										<li class="list-group-item">Remover</li>
 
-		</ul>
-				 </div>
+<div class="col-12 col-lg-4 col-sm-6">
+
+<div class="card">
+
+<div class="card-header">
+  Nome do Livro
+</div>
+ 
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Autor </li>
+    <li class="list-group-item"> Ano </li>
+    <li class="list-group-item"> Alterar </li>
+    <li class="list-group-item"> Remover </li>
+  </ul>
+
+</div>
 
 </div>
 
 <div class="col-12 col-lg-8 col-sm-6">
-	<div class="card">
-		<% @books.each do |book| %>
-							<div class="card-header">
-										<% @books.each do |book| %>
-									<%= link_to book.title, books_show_path(book.id) %>
 
-							</div>
-							<ul class="list-group list-group-flush">
+<div class="card">
+ 
+  <% @books.each do |book| %>
 
-								<li class="list-group-item"><%= link_to book.author, books_show_path(book.id)%></li>
-									<li class="list-group-item"><%= link_to book.year, books_show_path(book.id)%></li>
-										<li class="list-group-item"><%= link_to 'Alterar', books_edit_path(book.id) %></li>
-										<li class="list-group-item"><%= link_to 'Remover', sessions_destroy_path(book.id), :method => 'delete' %></li>
-		</ul>
-				 </div>
+<div class="card-header">
+  <% @books.each do |book| %>
+  <%= link_to book.title, books_show_path(book.id) %>
+</div>
+ 
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <%= link_to book.author, books_show_path(book.id)%> </li>
+    <li class="list-group-item"> <%= link_to book.year, books_show_path(book.id)%> </li>
+    <li class="list-group-item"> <%= link_to 'Alterar', books_edit_path(book.id) %> </li>
+    <li class="list-group-item"> <%= link_to 'Remover', sessions_destroy_path(book.id), :method => 'delete' %> </li>
+  </ul>
+  
+</div>
 
 </div>
-</div>
-
 
 </div>
+
+</div>
+
 <br>
 <br>
 <% end %>

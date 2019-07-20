@@ -1,24 +1,54 @@
 
 <div class="imagem">
-          <div class="row"><div class="col-sm-12 text-center"> <a href="site.html">
-            <%= image_tag('logo.png', style: 'width:200px; heigth:200px;') %>
-          </a></div></div></div>
-        <div class="content"><div class="row"><div class="col text-center">
-        <div class="titulo"><h1 style="font-family: fantasy;"> Biblioteca </h1></div>
-<%= form_for :login do |f| %>
-    <div class="text-center " >
-      <%= f.label :cpf, 'CPF:' %>
-      <%= f.text_field :cpf, autofocus: true %>
-    </div>
+          
+<div class="row">
+          
+<div class="col-sm-12 text-center">
+           
+  <a href="site.html">
+    <%= image_tag('logo.png', style: 'width:200px; heigth:200px;') %>
+  </a>
+       
+</div>
+       
+</div>
+       
+</div>
+        
+<div class="content">
+       
+<div class="row">
+       
+<div class="col text-center">
+        
+<div class="titulo">
 
+  <h1 style="font-family: fantasy;"> Biblioteca </h1>
+  
+</div>
 
-    <div>
-      <%= f.label :'Senha:' %>
-      <%= f.password_field :password %>
-    </div>
-  <div class="text-center">
-    <%= f.submit "Login" %>
-  </div>
+  <%= form_for :login do |f| %>
+  
+<div class="text-center " >
+      
+  <%= f.label :cpf, 'CPF:' %>
+  <%= f.text_field :cpf, autofocus: true %>
 
-        	    <br>
-<% end %>
+</div>
+
+<div>
+
+  <%= f.label :'Senha:' %>
+  <%= f.password_field :password %>
+    
+</div>
+  
+<div class="text-center">
+    
+  <%= f.submit "Login" %>
+    
+</div>
+
+<br>
+
+  <% end %>

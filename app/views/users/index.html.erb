@@ -1,49 +1,63 @@
 <div class="card text-center">
-  <div class="card-header">
-<h1>Todos os usuários</h1>
-  </div>
-	<div class="card-header">
-		<%= link_to 'Criar Novo usuário ?', users_new_path %>
-	</div>
-	<% @users.each do |user| %>
-	<div class="row">
-	<div class="col-12 col-lg-4 col-sm-6">
-		<div class="card border-primary">
-
-								<ul class="list-group list-group-flush">
-
-									<li class="list-group-item">Nome</li>
-										<li class="list-group-item">CPF</li>
-										<li class="list-group-item">Matrícula</li>
-										<li class="list-group-item">Turma</li>
-											<li class="list-group-item">Endereço</li>
-											<li class="list-group-item">Alterar</li>
-											<li class="list-group-item">Remover</li>
-<br>
-			</ul>
-					 </div>
-
-	</div>
-
-
-	<div class="col-12 col-lg-8 col-sm-6">
-		<div class="card border-primary">
-
-								<ul class="list-group list-group-flush">
-
-									<li class="list-group-item"><%= link_to user.name, users_show_path(user.id)%></li>
-										<li class="list-group-item"><%= link_to user.cpf, users_show_path(user.id) %></li>
-										<li class="list-group-item"><%= link_to user.register, users_show_path(user.id) %></li>
-										<li class="list-group-item"><%= link_to user.class_code, users_show_path(user.id) %></li>
-											<li class="list-group-item"><%= link_to user.address, users_show_path(user.id) %></li>
-											<li class="list-group-item"><%= link_to 'Alterar', users_edit_path(user.id) %></li>
-											<li class="list-group-item"><%= link_to 'Remover', users_destroy_path(user.id), :method => 'delete' %></li>
-<br>
-			</ul>
-					 </div>
-
-	</div>
+  
+<div class="card-header">
+  <h1>Todos os usuários</h1>
+</div>
+	
+<div class="card-header">
+  <%= link_to 'Criar Novo usuário ?', users_new_path %>
 </div>
 
-<% end %>
+  <% @users.each do |user| %>
+	
+<div class="row">
+	
+<div class="col-12 col-lg-4 col-sm-6">
+		
+<div class="card border-primary">
+
+  <ul class="list-group list-group-flush">
+
+    <li class="list-group-item"> Nome </li>
+    <li class="list-group-item"> CPF </li>
+    <li class="list-group-item"> Matrícula </li>
+    <li class="list-group-item"> Turma </li>
+    <li class="list-group-item"> Endereço </li>
+    <li class="list-group-item"> Alterar </li>
+    <li class="list-group-item"> Remover </li>
+
+    <br>
+			
+  </ul>
+
+</div>
+
+</div>
+
+<div class="col-12 col-lg-8 col-sm-6">
+		
+<div class="card border-primary">
+
+  <ul class="list-group list-group-flush">
+
+    <li class="list-group-item"> <%= link_to user.name, users_show_path(user.id)%> </li>
+    <li class="list-group-item"> <%= link_to user.cpf, users_show_path(user.id) %> </li>
+    <li class="list-group-item"> <%= link_to user.register, users_show_path(user.id)%> </li>
+    <li class="list-group-item"> <%= link_to user.class_code, users_show_path(user.id)%> </li>
+    <li class="list-group-item"> <%= link_to user.address, users_show_path(user.id)%> </li>
+    <li class="list-group-item"> <%= link_to 'Alterar', users_edit_path(user.id)%> </li>
+    <li class="list-group-item"> <%= link_to 'Remover', users_destroy_path(user.id), :method => 'delete'%> </li>
+
+    <br>
+			
+  </ul>
+					 
+</div>
+
+</div>
+
+</div>
+
+  <% end %>
+
 </div>

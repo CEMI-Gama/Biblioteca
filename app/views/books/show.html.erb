@@ -1,72 +1,84 @@
-
 <div class="card text-center">
-  <div class="card-header">
+ 
+<div class="card-header">
   <h1> Mostrar Livros </h1>
-  </div>
-	<div class="row">
-	<div class="col-12 col-lg-4 col-sm-6">
-		<div class="card">
-								<div class="card-header">
-										Nome do Livro
-								</div>
-								<ul class="list-group list-group-flush">
-
-									<li class="list-group-item">Autor</li>
-										<li class="list-group-item">Editora</li>
-										<li class="list-group-item">Ano</li>
-										<li class="list-group-item">Categoria</li>
-											<li class="list-group-item">Origem</li>
-											<li class="list-group-item">Quantidade</li>
-											<li class="list-group-item">Código de Barras</li>
-
-			</ul>
-					 </div>
-
-	</div>
-
-	<div class="col-12 col-lg-8 col-sm-6">
-		<div class="card">
-				<div class="card-header">
-				  <%= @book.title %>
-				</div>
-           <ul class="list-group list-group-flush">
-		     <li class="list-group-item"><%= @book.author %></li>
-				<li class="list-group-item">
-                  <%= @book.publishing_company %>
-                </li>
-				<li class="list-group-item">
-                  <%= @book.year %>
-                </li>
-				<li class="list-group-item">
-                  <%= @book.category %>
-                </li>
-		        <li class="list-group-item">
-		          <%= @book.source_of_donation %>
-		        </li>
-				<li class="list-group-item">
-                  <%= @book.amount %>
-                </li>
-				<li class="list-group-item text-center">
-                  <%= raw @barcode_for_html.to_html %>
-		          <br>
-				  Código: <%= @book.bar_code %> 
-				</li>
-			</ul>
-		</div>
-
-	</div>
 </div>
 
+<div class="row">
+
+<div class="col-12 col-lg-4 col-sm-6">
+		
+<div class="card">
+
+<div class="card-header">
+  Nome do Livro
+</div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Autor </li>
+    <li class="list-group-item"> Editora </li>
+    <li class="list-group-item"> Ano </li>
+    <li class="list-group-item"> Categoria </li>
+    <li class="list-group-item"> Origem </li>
+    <li class="list-group-item"> Quantidade </li>
+    <li class="list-group-item"> Código de Barras </li>
+  </ul>
+		
+</div>
 
 </div>
 
-<br>
-<br>
+<div class="col-12 col-lg-8 col-sm-6">
+		
+<div class="card">
+      
+<div class="card-header">
+  <%= @book.title %>
+</div>
+        
+  <ul class="list-group list-group-flush">
+   
+    <li class="list-group-item"> <%= @book.author %> </li>
+    <li class="list-group-item"> <%= @book.publishing_company %> </li>
+    <li class="list-group-item"> <%= @book.year %> </li>
+    <li class="list-group-item"> <%= @book.category %> </li>
+    <li class="list-group-item"> <%= @book.source_of_donation %> </li>
+    <li class="list-group-item"> <%= @book.amount %> </li>
+    <li class="list-group-item text-center"> 
+      <%= raw @barcode_for_html.to_html %>
+      <br>
+      Código: <%= @book.bar_code %> 
+    </li>
+    
+  </ul>
+  
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+  <br>
+  <br>
+  
 <style>
 
-table.barby-barcode { border-spacing: 0; margin: auto; }
-tr.barby-row {}
-td.barby-cell { width: 3px; height: 100px; }
-td.barby-cell.on { background: #000; }
+  table.barby-barcode {
+    border-spacing: 0; margin: auto; 
+  }
+  
+  tr.barby-row {
+    
+  }
+  
+  td.barby-cell {
+    width: 3px; height: 100px; 
+  }
+  
+  td.barby-cell.on { 
+    background: #000; 
+  }
 
 </style>

@@ -1,47 +1,54 @@
 
 <div class="card text-center">
-  <div class="card-header">
+  
+<div class="card-header">
   <h1>Mostrar perfil</h1>
-  </div>
+</div>
 
+<div class="row">
+	
+<div class="col-12 col-lg-4 col-sm-6">
+		
+<div class="card">
+								
+<div class="card-header">
+  Nome
+</div>
+								
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">CPF</li>
+    <li class="list-group-item">Matrícula</li>
+    <li class="list-group-item">Ano</li>
+    <li class="list-group-item">Turma</li>
+    <li class="list-group-item">Origem</li>
+    <li class="list-group-item">Quantidade</li>
+    <li class="list-group-item">Endereço</li>
+  </ul>
+					 
+</div>
 
-	<div class="row">
-	<div class="col-12 col-lg-4 col-sm-6">
-		<div class="card">
-								<div class="card-header">
-										Nome
-								</div>
-								<ul class="list-group list-group-flush">
+<div class="col-12 col-lg-8 col-sm-6">
+				 		
+<div class="card">
+				 								
+<div class="card-header">									
+  <%=@user.name%>				 								
+</div>
+				 		
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%=@user.cpf%></li>
+    <li class="list-group-item"><%=@user.register%></li>
+    <li class="list-group-item"><%=@user.class_code%></li>
+    <li class="list-group-item"><%=@user.address%></li>
+  </ul>
+				 					 
+</div>
 
-									<li class="list-group-item">CPF</li>
-										<li class="list-group-item">Matrícula</li>
-										<li class="list-group-item">Ano</li>
-										<li class="list-group-item">Turma</li>
-											<li class="list-group-item">Origem</li>
-											<li class="list-group-item">Quantidade</li>
-											<li class="list-group-item">Endereço</li>
+</div>
+				 
+</div>
 
-			</ul>
-					 </div>
-
-					 <div class="col-12 col-lg-8 col-sm-6">
-				 		<div class="card">
-				 								<div class="card-header">
-				 									<%=@user.name%>
-				 								</div>
-				 								<ul class="list-group list-group-flush">
-
-				 									<li class="list-group-item"><%=@user.cpf%></li>
-				 										<li class="list-group-item"><%=@user.register%></li>
-				 										<li class="list-group-item"><%=@user.class_code%></li>
-				 										<li class="list-group-item"><%=@user.address%></li>
-				 			</ul>
-				 					 </div>
-
-				 	</div>
-				 </div>
-
-
-				 </div>
-				 <br>
-				 <br>
+</div>
+				 
+<br>
+<br>

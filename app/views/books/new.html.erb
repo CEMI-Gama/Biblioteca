@@ -1,35 +1,62 @@
 <div class="card text-center">
-  <div class="card-header">
-<h1> Cadastro de Livros </h1>
-  </div>
+ 
+<div class="card-header">
+  <h1> Cadastro de Livros </h1>
+</div>
+ 
+  <%= form_for @book , url:books_create_path do |f| %>
 
+<div class="row">
 
-<%= form_for @book , url:books_create_path do |f| %>
-	<div class="row">
-	<div class="col-12 col-lg-12 col-sm-6">
-		<div class="card">
-								<div class="card-header">
-									<%= f.label :title, 'Nome do Livro:' %>
-									<%= f.text_field :title %>
-								</div>
-								<ul class="list-group list-group-flush">
+<div class="col-12 col-lg-12 col-sm-6">
 
-									<li class="list-group-item">	<%= f.label :author, 'Autor:' %>
-										<%= f.text_field :author %></li>
-										<li class="list-group-item">	<%= f.label :publishing_company, 'Editora:' %>
-											<%= f.text_field :publishing_company %></li>
-										<li class="list-group-item">	<%= f.label :year, 'Ano:' %>
-											<%= f.text_field :year %></li>
-										<li class="list-group-item">	<%= f.label :category, 'Categoria:' %>
-											<%= f.text_field :category %></li>
-											<li class="list-group-item">	<%= f.label :source_of_donation, 'Origem da Doação:' %>
-												<%= f.text_field :source_of_donation %></li>
-											<li class="list-group-item">	<%= f.label :amount, 'Quantidade:' %>
-												<%= f.text_field :amount %></li>
-											<li class="list-group-item btn border-sucess"><%= f.submit 'Salvar' %></li>
+<div class="card">
 
-			</ul>
-					 </div>
+<div class="card-header">
+  <%= f.label :title, 'Nome do Livro:' %>
+  <%= f.text_field :title %>
+</div>
 
-	</div>
-	<% end %>
+  <ul class="list-group list-group-flush">
+   
+    <li class="list-group-item">
+      <%= f.label :author, 'Autor:' %>
+      <%= f.text_field :author %>
+    </li>
+    
+    <li class="list-group-item">
+      <%= f.label :publishing_company, 'Editora:' %>
+      <%= f.text_field :publishing_company %>
+    </li>
+                  
+    <li class="list-group-item">
+      <%= f.label :year, 'Ano:' %>
+      <%= f.text_field :year %>
+    </li>
+
+    <li class="list-group-item">
+      <%= f.label :category, 'Categoria:' %>
+      <%= f.text_field :category %>
+    </li>
+
+    <li class="list-group-item">
+      <%= f.label :source_of_donation, 'Origem da Doação:' %>
+      <%= f.text_field :source_of_donation %>
+    </li>
+											
+    <li class="list-group-item">
+      <%= f.label :amount, 'Quantidade:' %>
+      <%= f.text_field :amount %>
+    </li>
+
+    <li class="list-group-item btn border-sucess">
+      <%= f.submit 'Salvar' %>
+    </li>
+
+  </ul>
+
+</div>
+
+</div>
+
+<% end %>

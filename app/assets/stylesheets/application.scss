@@ -1,193 +1,180 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
+  @import "bootstrap";
 
- */
- @import "bootstrap";
+  body {
+    margin-top: 50px;
+  }
 
- body {
-   margin-top: 50px;
- }
+  .top-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
 
- .top-menu {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   z-index: 100;
- }
- .row{
-   margin-left: 0 !important;
-   margin-right: 0 !important;
- }
+  .row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
- .top-menu * {
-   margin:0;
-   padding: 0;
- }
+  .top-menu * {
+    margin: 0;
+    padding: 0;
+  }
 
- .top-menu nav {
-     background:#00316d;
-     width: 50%;
-     float:left;
-   }
+  .top-menu nav {
+    background: #00316d;
+    width: 50%;
+    float: left;
+  }
 
- .top-menu ul {
-   margin:0 auto;
-   width:100%;
- }
+  .top-menu ul {
+    margin: 0 auto;
+    width: 100%;
+  }
 
- .top-menu ul li {
-   list-style:none;
-   display: inline-block;
-   padding:10px;
- }
+  .top-menu ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+  }
 
- .top-menu ul li:hover {
-   background:#608000;
- }
+  .top-menu ul li:hover {
+    background: #608000;
+  }
 
- .top-menu ul li a {
-   color: #fff;
-   text-decoration:none;
- }
- .top-menu ul li{
-   color: #fff;
-   text-decoration:none;
- }
+  .top-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
 
- .top-menu .toggle {
-   width:50%;
-   padding: 10px 20px;
-   background:#001f44;
-   text-align:right;
-   box-sizing:border-box;
-   color: #fff;
-   font-size:30px;
-   display:none;
- }
+  .top-menu ul li{
+    color: #fff;
+    text-decoration: none;
+  }
 
- .login {
-   text-align:right;
- }
+  .top-menu .toggle {
+    width: 50%;
+    padding: 10px 20px;
+    background: #001f44;
+    text-align: right;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 30px;
+    display: none;
+  }
 
- #myFooter {
-     background-color: #3c3d41;
-     color: white;
-     padding-top: 30px;
- }
+  .login {
+    text-align: right;
+  }
 
- #myFooter .footer-copyright {
-     background-color: #333333;
-     padding-top: 3px;
-     padding-bottom: 3px;
-     text-align: center;
- }
+  #myFooter {
+    background-color: #3c3d41;
+    color: white;
+    padding-top: 30px;
+  }
 
- #myFooter .row {
-     margin-bottom: 60px;
- }
+  #myFooter .footer-copyright {
+    background-color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+  }
 
- #myFooter .navbar-brand {
-     margin-top: 45px;
-     height: 65px;
- }
+  #myFooter .row {
+    margin-bottom: 60px;
+  }
 
- #myFooter .footer-copyright p {
-     margin: 10px;
-     color: #ccc;
- }
+  #myFooter .navbar-brand {
+    margin-top: 45px;
+    height: 65px;
+  }
 
- #myFooter ul {
-     list-style-type: none;
-     padding-left: 0;
-     line-height: 1.7;
- }
+  #myFooter .footer-copyright p {
+    margin: 10px;
+    color: #ccc;
+  }
 
- #myFooter h5 {
-     font-size: 18px;
-     color: white;
-     font-weight: bold;
-     margin-top: 30px;
- }
+  #myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+  }
 
- #myFooter h2 a{
-     font-size: 50px;
-     text-align: center;
-     color: #fff;
- }
+  #myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+  }
 
- #myFooter a {
-     color: #d2d1d1;
-     text-decoration: none;
- }
+  #myFooter h2 a{
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+  }
 
- #myFooter a:hover,
- #myFooter a:focus {
-     text-decoration: none;
-     color: white;
- }
+  #myFooter a {
+    color: #d2d1d1;
+    text-decoration: none;
+  }
 
- #myFooter .social-networks {
-     text-align: center;
-     padding-top: 30px;
-     padding-bottom: 16px;
- }
+  #myFooter a:hover,
+  #myFooter a:focus {
+    text-decoration: none;
+    color: white;
+  }
 
- #myFooter .social-networks a {
-     font-size: 32px;
-     color: #f9f9f9;
-     padding: 10px;
-     transition: 0.2s;
- }
+  #myFooter .social-networks {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+  }
 
- #myFooter .social-networks a:hover {
-     text-decoration: none;
- }
+  #myFooter .social-networks a {
+    font-size: 32px;
+    color: #f9f9f9;
+    padding: 10px;
+    transition: 0.2s;
+  }
 
- #myFooter .facebook:hover {
-     color: #0077e2;
- }
+  #myFooter .social-networks a:hover {
+    text-decoration: none;
+  }
 
- #myFooter .google:hover {
-     color: #ef1a1a;
- }
+  #myFooter .facebook:hover {
+    color: #0077e2;
+  }
 
- #myFooter .twitter:hover {
-     color: #00aced;
- }
+  #myFooter .google:hover {
+    color: #ef1a1a;
+  }
 
- #myFooter .btn {
-     color: white;
-     background-color: #d84b6b;
-     border-radius: 20px;
-     border: none;
-     width: 150px;
-     display: block;
-     margin: 0 auto;
-     margin-top: 10px;
-     line-height: 25px;
- }
+  #myFooter .twitter:hover {
+    color: #00aced;
+  }
 
- @media screen and (max-width: 767px) {
-     #myFooter {
-         text-align: center;
-     }
- }
+  #myFooter .btn {
+    color: white;
+    background-color: #d84b6b;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+  }
 
+  @media screen and (max-width: 767px) {
+    #myFooter {
+      text-align: center;
+    }
+  }
 
- @media only screen and (max-width: 768px) {
- .top-menu .toggle {display: block;}
- .top-menu ul {width: 100%;display: none;}
- .top-menu ul li {display: block;text-align: center;}
- .top-menu .active {display: block;}
- }
+  @media only screen and (max-width: 768px) {
+    .top-menu .toggle {display: block;}
+    .top-menu ul {width: 100%;display: none;}
+    .top-menu ul li {display: block;text-align: center;}
+    .top-menu .active {display: block;}
+  }

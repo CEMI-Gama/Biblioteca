@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    # Nothing to do
+    # empty method definitions
   end
 
   def create
